@@ -1,6 +1,7 @@
 package com.example.myproject;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,20 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 import model.Student;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.ui.ModelMap;
 
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
-import com.google.appengine.api.datastore.KeyFactory;
 import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
-import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.Query.FilterOperator;
 
 
@@ -109,20 +108,23 @@ public class StudentController {
  	 return mav;
    
    }   
-   @RequestMapping(value = "/deleteStudent/{name}", method = RequestMethod.GET)
+   @SuppressWarnings("deprecation")
+@RequestMapping(value = "/deleteStudent/{name}", method = RequestMethod.GET)
    public ModelAndView deleteStudent(@PathVariable String name) {
 	   DatastoreService ds= DatastoreServiceFactory.getDatastoreService();
 	   Query query = new Query("Student");
 	    query.addFilter("name", FilterOperator.EQUAL,name);
 	    PreparedQuery pq = ds.prepare(query);
-	    Entity e = pq.asSingleEntity();
+	    Iterator<Entity> itr = pq.asIterator();
 	 
-	    	System.out.println(e.getKey());
-	    
-	    ds.delete(e.getKey()); //delete it
+	    //	System.out.println(e.getKey());
+	    while(itr.hasNext())
+
+	    		ds.delete(itr.next().getKey()); //delete it
 	    return new ModelAndView("redirect:../seestudent");
    } 
-   @RequestMapping(value="/updateStudent/{name}", method = RequestMethod.GET)
+   @SuppressWarnings("deprecation")
+@RequestMapping(value="/updateStudent/{name}", method = RequestMethod.GET)
 	public String getUpdateCustomerPage(@PathVariable String name, 
 			HttpServletRequest request, ModelMap model) {
 

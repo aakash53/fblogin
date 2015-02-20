@@ -28,7 +28,7 @@ th {
 }
         </style>
 </head>
-<body><h1><center>Upadte Student Record</center></h1><form action="/update" method="post">
+<body style="align:center"><h1>Upadte Student Record</h1><form action="/update" method="post">
     <table border= "1" align="center" style="border-collapse: collapse">
  <tr>
   	<td>Id:</td>

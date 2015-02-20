@@ -3,11 +3,11 @@
 <head>
     <title>Spring MVC Form Handling</title>
 </head>
-<body>
+<body style="align:center">
 
-<center><h2>Student Information Form </h2></center>
+<h2>Student Information Form </h2>
 <form method="POST" action="/addStudent">
-   <table align="center">
+   <table style="align:center">
     <tr>
         <td><label id="name">Name</label></td>
         <td><input type="text" name="name"/></td>

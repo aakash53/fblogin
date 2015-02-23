@@ -1,4 +1,8 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@page session="true"%>
+<spring:url var="authUrl"
+value="/static/j_spring_security_logout" />
 <html>
 <head>
 <style>
@@ -57,5 +61,10 @@ font-weight: bold;
     </tr>
 </table>  
 </form:form>
+
+<c:if test="${pageContext.request.userPrincipal.name != null}">
+	   <h2>Welcome : ${pageContext.request.userPrincipal.name} 
+           |<a href="${authUrl}"> Logout</a></h2>  
+	</c:if>
 </body>
 </html>

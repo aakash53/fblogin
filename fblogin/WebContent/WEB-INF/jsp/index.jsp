@@ -10,21 +10,8 @@
 
 </head>
 <body>
-<a href="student.html">Click Here</a>
-<table style="border-collapse: separate; border-spacing: 2px">
-    <tr>
-        <td><a th:href="@{/auth/linkedin}" class="..."><i class="..."></i>LinkedIn</a></td>
-        <td><a th:href="@{/auth/facebook}" class="..."><i class="..."></i>Facebook</a></td>
-    </tr>
-    <tr>
-        <td><a th:href="@{/auth/twitter}" class="..."><i class="..."></i>Twitter</a></td>
-        <td><a th:href="@{/auth/live(scope='wl.signin,wl.basic')}" class="..."><i class="..."></i>Microsoft</a></td>
-    </tr>
-    <tr>
-        <td><a th:href="@{/auth/github}" class="..."><i class="..."></i>Github</a></td>
-        <td><a th:href="@{/auth/google(scope='profile')}" class="..."><i class="..."></i>Google+</a></td>
-    </tr>
-</table>
+<a href="/student.html">Click Here</a>
+
 	
 </body>
 </html>

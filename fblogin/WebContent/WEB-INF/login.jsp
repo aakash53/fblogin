@@ -1,4 +1,4 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <div>
 <h2>Sign in to Spitter</h2>
 <p>
@@ -12,9 +12,7 @@ value="/static/j_spring_security_check" />
 <table cellspacing="0">
 <tr>
 <th><label for="username_or_email">Username or Email</label></th>
-<td><input id="username_or_email"
-name="j_username"
-type="text" />
+<td><input id="username_or_email" name="j_username" type="text" />
 </td>
 </tr>
 <tr>

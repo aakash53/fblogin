@@ -133,7 +133,7 @@ public class StudentController {
    }   
    @SuppressWarnings("deprecation")
 @RequestMapping(value = "/deleteStudent/{name}", method = RequestMethod.GET)
-   public ModelAndView deleteStudent(@PathVariable String name) {
+   public ModelAndView deleteStudent(@PathVariable int name) {
 	   DatastoreService ds= DatastoreServiceFactory.getDatastoreService();
 	   Query query = new Query("Student");
 	    query.addFilter("name", FilterOperator.EQUAL,name);

@@ -1,10 +1,14 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<head><style>
+body{
+	align:center;
+}
+</style></head>
+<body>
 <div>
-<h2>Sign in to Spitter</h2>
+<h2>Sign in to Manage Student</h2>
 <p>
-If you've been using Spitter from your phone,
-then that's amazing...we don't support IM yet.
-</p>
+
 <spring:url var="authUrl"
 value="/static/j_spring_security_check" />
 <form method="post" class="signin" action="${authUrl}">
@@ -43,4 +47,4 @@ class="inline">Remember me</label></td>
 <script type="text/javascript">
 document.getElementById('username_or_email').focus();
 </script>
-</div>
+</div></body>

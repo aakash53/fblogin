@@ -1,7 +1,9 @@
 package model;
 
 public class Student {
-   private Integer age;
+	
+	private Integer id;
+	private Integer age;
    private String name;
    private String Branch;
    private String grade;
@@ -25,7 +27,7 @@ public String getUniversity() {
 public void setUniversity(String university) {
 	this.university = university;
 }
-private Integer id;
+
 
    public void setAge(Integer age) {
       this.age = age;

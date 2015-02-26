@@ -1,4 +1,4 @@
-<%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <div>
 <h2>Sign in to Spitter</h2>
 <p>

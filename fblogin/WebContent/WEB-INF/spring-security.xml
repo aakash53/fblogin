@@ -6,17 +6,23 @@
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
- 
-	<http auto-config="true">
-		<intercept-url pattern="/student" access="ROLE_USER" />
-	</http>
- 
+ <http auto-config="true" use-expressions="false">
+		<intercept-url pattern="/student.html" access="ROLE_ADMIN" ></intercept-url>
+		<intercept-url pattern="/seestudent" access="ROLE_USER"></intercept-url>	 
+		<form-login login-processing-url="/static/j_spring_security_check"
+		login-page="/login"
+		authentication-failure-url="/login?login_error=t"/>
+</http>
+	
 	<authentication-manager>
 	  <authentication-provider>
 	    <user-service>
-		<user name="aakash" password="12345" authorities="ROLE_USER" />
+		
+		<user name="admin" password="12345" authorities="ROLE_ADMIN" />
+		<user name="user" password="12345" authorities="ROLE_USER" />
+		
 	    </user-service>
 	  </authentication-provider>
 	</authentication-manager>
  
-</beans:beans>
+</beans:beans> 
